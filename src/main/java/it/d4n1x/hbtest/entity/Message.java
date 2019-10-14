@@ -2,6 +2,7 @@ package it.d4n1x.hbtest.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +14,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "MESSAGE")
 public class Message extends AbstractEntity implements Serializable {
@@ -35,7 +38,7 @@ public class Message extends AbstractEntity implements Serializable {
 	@JoinColumn(name = "fk_user")
 	private User msgOwner;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_attachment")
 	Attachment attachment;
 
