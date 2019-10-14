@@ -4,6 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.Data;
 
 @Data
@@ -16,8 +19,10 @@ public abstract class AbstractEntity {
 	private String updateUser;
 
 	@Column(name = "CREATION_DATE")
+	@CreationTimestamp
 	private Date creationDate;
 
 	@Column(name = "UPDATE_DATE")
+	@UpdateTimestamp
 	private Date updateDate;
 }

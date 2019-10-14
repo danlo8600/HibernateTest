@@ -41,7 +41,7 @@ public class User extends AbstractEntity implements Serializable {
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Message> msgList = new ArrayList<Message>();
+	private List<Message> msgList = new ArrayList<>();
 
 	public User() {
 

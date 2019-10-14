@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.annotation.Resource;
 import javax.sql.rowset.serial.SerialBlob;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +32,7 @@ public class MessageController {
 		System.out.println("CIAO REST");
 	}
 
-	@PostMapping("/usr")
+	@PostMapping(path = "/usr", produces = MediaType.APPLICATION_JSON_VALUE)
 	public User usr(@RequestParam("file") MultipartFile file, @RequestParam("text") String text) {
 
 		User usr = null;
