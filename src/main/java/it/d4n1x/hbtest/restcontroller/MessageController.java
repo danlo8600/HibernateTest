@@ -27,11 +27,6 @@ public class MessageController {
 	@Resource
 	UserRepository usrRepository;
 
-	@PostMapping("/test")
-	public void test() {
-		System.out.println("CIAO REST");
-	}
-
 	@PostMapping(path = "/usr", produces = MediaType.APPLICATION_JSON_VALUE)
 	public User usr(@RequestParam("file") MultipartFile file, @RequestParam("text") String text) {
 
